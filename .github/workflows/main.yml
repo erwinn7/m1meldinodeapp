@@ -37,11 +37,11 @@ jobs:
       - name: run l'image docker
         run: docker run -d -p 3000:3000 ${{env.IMAGE_NAME}}
 
-      - name: tager en version courante l'image docker
-        run: "docker tag ${{ env.IMAGE_NAME }}:1.0 ${{ env.REPO }}/${{ github.actor }}/${{ env.IMAGE_NAME }}:1.0 "
+      - name: tagger en version courante l'image docker
+        run: "docker tag ${{ env.IMAGE_NAME }} ${{ env.REPO }}/${{ github.actor }}/${{ env.IMAGE_NAME }}:1.0 "
 
-      - name: tager en version latest l'image docker
-        run: "docker tag ${{ env.IMAGE_NAME }}:1.0 ${{ env.REPO }}/${{ github.actor }}/${{ env.IMAGE_NAME }}:latest "        
+      - name: tagger en version latest l'image docker
+        run: "docker tag ${{ env.IMAGE_NAME }} ${{ env.REPO }}/${{ github.actor }}/${{ env.IMAGE_NAME }}:latest "        
 
       - name : connexion a GHCR
         uses: docker/login-action@v2
