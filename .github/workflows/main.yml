@@ -56,4 +56,4 @@ jobs:
       - name: push de l'image version latest sur GHCR.
         run: "docker push ${{ env.REPO }}/${{ github.actor }}/${{ env.IMAGE_NAME }}:latest "
 
-        d
+        
